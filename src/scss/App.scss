@@ -1,0 +1,500 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Yrsa:400,500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+@import "_variables";
+@import "_mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Yrsa";
+  padding-top: 150px;
+}
+
+h2{
+  //font-family: 'Song Myung', serif;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 25px;
+}
+
+//링크
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family : "Montserrat";
+  font-weight: 500;
+  font-size : 12px;
+  letter-spacing : 2px;
+  &:hover {
+    background-color:#f3ede8;
+  }
+}
+
+button{
+  text-decoration: none;
+  color: inherit;
+  font-family : "Montserrat";
+  font-weight: 500;
+  font-size : 12px;
+  letter-spacing : 2px;
+  &:hover {
+    background-color:#f3ede8;
+  }
+}
+
+
+//최상단 로그인 바
+.mainheader{
+
+
+  position: fixed;
+  background-color: #f3ede8;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  width: 100%;
+  padding: 0px 10%;
+  font-family: "Montserrat", sans-serif;
+
+  > span {
+    justify-self: end;
+  }
+
+  //환영인사
+  h1 {
+    display: flex;
+    font-family: "Yrsa";
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .loginhi{
+    display: flex;
+
+    .hi{
+      margin-right: 10px;
+      color : gray;
+    }
+
+    .button{
+      border: 0;
+      outline: 0;
+      background-color : #f3ede8;
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color:gray;
+      }
+
+    }
+
+    a{
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color:gray;
+      }
+    }
+  }
+}
+
+//상단 기능 메뉴바
+.menubar {
+
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  top: 80px;
+  left: 0;
+  padding: 0px 140px;
+  background-color: white;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  
+    align-items: center;
+
+    ul {
+      display: flex;
+      text-transform: uppercase;
+      list-style: none;
+      @include minifont();
+        li {
+          margin-right: 40px;
+        }
+    }
+  }
+}
+
+//메인홈
+.hero {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../img/newnaildesigns.webp");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+  margin: 0px $sideSpace;
+  margin-top: 80px;
+  h4 {
+    @include minifont();
+    margin-bottom: 30px;
+  }
+  h3 {
+    font-size: 40px;
+    width: 45%;
+    text-align: center;    margin-bottom: 50px;
+  }
+  a {
+    width: 20%;
+    background-color: white;
+    padding: 20px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    @include minifont();
+    @include button();
+  }
+}
+
+// 로그인페이지 헤더
+.homeheader{
+  position: fixed;
+  background-color: #f3ede8;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1;
+  align-items: center;
+
+  .logo{
+    
+    align-items: center center;
+    font-family: "Yrsa";
+    font-size: 30px;
+    font-weight: 500;
+  }
+}
+
+
+//게시판목록 테이블
+.table{
+  table {
+
+    font-family : "Montserrat";
+    font-size : 12px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border : solid black 0.5px;
+    margin-top : 30px;
+  }
+
+  tr{
+    border : solid black 0.5px;
+  }
+
+  th{
+    border-bottom : solid black 0.5px;
+    font-weight: 500;
+    font-size : 15px;
+    background-color : #f3ede8;
+  }
+
+
+  .new{
+    border: solid 1px black;
+    padding : 10px 10px;
+    transition: color 0.1s linear, background 0.1s linear;
+    &:hover {
+      background-color:#f3ede8;
+    }
+  }
+}
+
+.coin{
+  td{
+    font-family : "Montserrat";
+    font-size : 15px;
+    padding-right : 30px;
+  }
+
+  .front{
+    background-color : #f3ede8;
+  }
+
+  .under{
+    padding: 30px;
+  }
+
+  .button{
+    border: 0;
+    outline: 0;
+    background-color:white;
+    &:hover {
+      background-color:#f3ede8;
+    }
+  }
+  
+}
+
+.read{
+  td{
+    font-family : "Montserrat";
+    font-size : 15px;
+    padding-right : 30px;
+  }
+
+  .front{
+    background-color : #f3ede8;
+  }
+
+  input {
+    width : 400px;
+  }
+
+  textarea {
+    width : 400px;
+    height : 70px;
+  }
+
+  .button{
+    border: 0;
+    outline: 0;
+    background-color:white;
+    &:hover {
+      background-color:#f3ede8;
+    }
+  }
+
+}
+
+.login{
+  td{
+    font-family : "Montserrat";
+    font-size : 15px;
+    padding-right : 30px;
+  }
+  .front{
+    background-color : #f3ede8;
+  }
+  input {
+    width : 200px;
+  }
+  .under{
+    padding: 30px;
+  }
+
+  .new{
+    background-color:white;
+    padding : 10px 10px;
+    margin-bottom : 50px;
+    border: solid 1px black;
+    padding : 10px 10px;
+    transition: color 0.1s linear, background 0.1s linear;
+    &:hover {
+      background-color:#f3ede8;
+    }
+  }
+}
+
+
+
+//푸터
+.footer {
+  margin-top: 100px;
+  background-color:  #f3ede8;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 40px 0px;
+
+  .footer__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include minifont();
+
+    .column__title {
+      margin-bottom: 30px;
+      opacity: 0.5;
+    }
+    ul {
+      padding: 0px 0px 0px 0px;
+      text-align: center;
+      list-style: none;
+      li {
+        margin-bottom: 15px;
+      }
+    }
+    &:nth-child(2) {
+      border-right: 1px solid black;
+      border-left: 1px solid black;
+    }
+  }
+}
+
+.gallery {
+  margin-top : 50px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 27vh;
+  width : 1000px;
+
+  .gallery__item1 {
+    @include gallery__itemm("../img/image1.png");
+  }
+
+  .gallery__item2 {
+    @include gallery__itemm("../img/image2.png");
+  }
+
+  .gallery__item3 {
+    @include gallery__itemm("../img/image3.png");
+  }
+
+  .gallery__item4 {
+    @include gallery__itemm("../img/image4.png");
+  }
+
+  .gallery__item5 {
+    @include gallery__itemm("../img/image5.png");
+  }
+
+  .gallery__item6 {
+    @include gallery__itemm("../img/image6.png");
+  }
+
+  .gallery__item7 {
+    @include gallery__itemm("../img/image7.png");
+  }
+
+  .gallery__item8 {
+    @include gallery__itemm("../img/image8.png");
+  }
+
+  .gallery__item9 {
+    @include gallery__itemm("../img/image9.png");
+  }
+
+  .gallery__item10 {
+    @include gallery__itemm("../img/image10.png");
+  }
+
+}
+
+
+.under-hero {
+  height: 80vh;
+  display: flex;
+  width: 100%;
+  margin-top : 80px;
+  margin-bottom: 80px;
+
+  .photo1{
+    background-size: cover;
+    background-position: center;
+    background-image: url("../img/ourstudios.webp");
+  }
+
+  .under-hero__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg;
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h4 {
+        @include minifont();
+        margin-bottom: 30px;
+      }
+      h3 {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      a {
+        border: 1px solid black;
+        padding: 20px;
+        @include button();
+      }
+
+
+    }
+  }
+  div {
+    width: 50%;
+  }
+}
+
+
+
+.blog {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 55vh);
+  margin-bottom: 0px;
+
+  .blog__post {
+    .photo2{
+      background-size: cover;
+      background-position: center;
+      background-image: url("../img/2.webp");
+    }
+    .photo3{
+      background-size: cover;
+      background-position: center;
+      background-image: url("../img/3.webp");
+      order: 1;
+    }
+    background-color: $bg;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+    .post__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .post__date {
+        @include minifont();
+        margin-bottom: 10px;
+      }
+      h4 {
+        font-size: 32px;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+      a {
+        transition: text 0.3s linear;
+        &:hover {
+          text-shadow: 2px 2px 3px black;
+        }
+      }
+    }
+  }
+}

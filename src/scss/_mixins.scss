@@ -1,0 +1,57 @@
+@mixin button{
+  transition: color 0.3s linear, background 0.3s linear;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+@mixin minifont() {
+  font-family : "Montserrat";
+  font-weight: 500;
+  font-size : 10px;
+  text-transform : uppercase;
+  letter-spacing : 2px;
+}
+
+@mixin gallery__itemm($imgurl){
+
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    content:"";
+    background-size: cover;
+    background-position: center;
+    background-image: url($imgurl);
+    transition: all 0.2s linear;
+  }
+
+  .gallery__text{
+    opacity: 0;
+    text-align: center;
+    padding: 70px 0px;
+    font-size: 20px;
+  }
+
+  &:hover{
+    .gallery__text{
+      opacity: 1;
+    }
+  }
+
+  &:hover::after {
+    filter: blur(10px);
+    transition: all 0.2s linear;
+  }
+}
